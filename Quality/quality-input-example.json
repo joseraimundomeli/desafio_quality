@@ -1,0 +1,31 @@
+{
+  "prop_name": "Casa rosada",
+  "prop_district" : "Centro",
+  "roons" : [
+    {
+      "room_name" : "Sala",
+      "room_width" : 10.0,
+      "room_length" : 15.0
+    },
+    {
+      "room_name" : "Quarto Suite",
+      "room_width" : 10.0,
+      "room_length" : 10.0
+    },
+    {
+      "room_name" : "Escritório",
+      "room_width" : 8.0,
+      "room_length" : 8.0
+    },
+    {
+      "room_name" : "Cozinha",
+      "room_width" : 10.0,
+      "room_length" : 5.0
+    },
+    {
+      "room_name" : "Área de Serviço",
+      "room_width" : 12.0,
+      "room_length" : 5.0
+    }
+  ]
+}
