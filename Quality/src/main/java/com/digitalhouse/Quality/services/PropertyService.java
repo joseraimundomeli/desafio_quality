@@ -1,10 +1,10 @@
 package com.digitalhouse.Quality.services;
 
-import com.digitalhouse.Quality.models.Room;
+import com.digitalhouse.Quality.dtos.*;
 
 public interface PropertyService {
-    Double computerSizeProperty();
-    Double computerPriceProperty();
-    Room getMaxRoom();
-    Double getsRoomSquareMeters();
+    PropertySizeDTO getTotalSquareMeters(PropertyDTO propertyDTO);
+    PropertyPriceDTO getPriceProperty(PropertyDTO propertyDTO);
+    RoomDTO getBiggestRoom(PropertyDTO propertyDTO);
+    RoonsSquareMetersDTO getsRoomSquareMeters(PropertyDTO propertyDTO);
 }

@@ -1,4 +1,4 @@
-package com.digitalhouse.Quality.models;
+package com.digitalhouse.Quality.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Room {
+public class RoomDTO {
     @NotNull(message = "É necessário informar o nome do quarto!")
     @Pattern(regexp = "^[A-Z][a-z0-9_-]$",message = "O nome do cômodo deve começar com uma letra maiúscula.")
     @Size(max = 30, message = "O comprimento do cômodo não pode exceder 30 caracteres.")
