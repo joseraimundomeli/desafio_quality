@@ -19,11 +19,11 @@ public class PropertyServiceTest {
     @Test
     void getTotalSquareMetersTest(){
         //arrange
-//        when(propertyDTO.getRoons()).thenReturn(null);
-//
-//        //act
-//        propertyServiceMock.getTotalSquareMeters(propertyDTO);
-//
+        when(propertyDTO.getRoons()).thenReturn(null);
+
+        //act
+        propertyServiceMock.getTotalSquareMeters(propertyDTO);
+
 //        verify(propertyDTO, atLeastOnce());
 //        assertEquals(0.0, propertyServiceMock.get);
 //        EasyMock.expect(propertyServiceMock.getTotalSquareMeters(propertyDTO).getSize()).andReturn(10.0);

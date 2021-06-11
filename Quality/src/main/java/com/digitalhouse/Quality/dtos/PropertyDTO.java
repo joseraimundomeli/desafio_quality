@@ -1,10 +1,7 @@
 package com.digitalhouse.Quality.dtos;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -15,6 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class PropertyDTO {
     @NotNull(message = "É necessário informar o nome da propriedade!")
     @Size(max = 30, message = "O comprimento do nome não pode exceder 30 caracteres.")
