@@ -21,7 +21,7 @@ public class PropertyServiceImpl implements PropertyService{
                 .mapToDouble(x -> this.computerArea(x.getRoomLength(), x.getRoomWidth()))
                 .sum();
 
-        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total area: " + squareMeters +"²");
+        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total area: " + squareMeters);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class PropertyServiceImpl implements PropertyService{
                 .stream()
                 .mapToDouble(x -> this.computerArea(x.getRoomLength(), x.getRoomWidth()))
                 .sum();
-        System.out.println(totalSize);
+
         return totalSize;
     }
 

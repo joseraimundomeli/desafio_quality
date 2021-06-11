@@ -1,4 +1,4 @@
-package com.digitalhouse.Quality;
+package com.digitalhouse.Quality.unit;
 
 import com.digitalhouse.Quality.dtos.PropertyDTO;
 import com.digitalhouse.Quality.dtos.RoomDTO;
@@ -77,7 +77,6 @@ public class PropertyServiceTest {
                 );
         // Assert
         assertEquals(roomAreaTest, 75.0, "A área do quarto deve ser 75.0 M2");
-
 
     }
 

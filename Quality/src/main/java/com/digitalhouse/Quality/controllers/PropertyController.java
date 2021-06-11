@@ -18,24 +18,24 @@ public class PropertyController {
     private PropertyServiceImpl propertyService;
 
     @GetMapping("proparea")
-    ResponseEntity<?> getTotalArea(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getTotalArea(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalArea(property));
     }
 
     @GetMapping("price")
-    ResponseEntity<?> getPrice(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getPrice(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getPriceProperty(property));
     }
 
 
     @GetMapping("bigroom")
-    ResponseEntity<?> getBiggestRoom(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getBiggestRoom(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getBiggestRoom(property));
     }
 
 
     @GetMapping("roomsarealist")
-    ResponseEntity<?> getRoonsAreaList(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getRoonsAreaList(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getRoomsArea(property));
     }
 
