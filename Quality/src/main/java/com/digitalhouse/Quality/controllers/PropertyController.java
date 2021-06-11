@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/")
 public class PropertyController {
@@ -16,24 +18,24 @@ public class PropertyController {
     private PropertyServiceImpl propertyService;
 
     @GetMapping("totalsm")
-    ResponseEntity<?> getTotalSize(@RequestBody PropertyDTO property){
+    ResponseEntity<?> getTotalSize(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalSquareMeters(property));
     }
 
     @GetMapping("price")
-    ResponseEntity<?> getPrice(@RequestBody PropertyDTO property){
+    ResponseEntity<?> getPrice(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getPriceProperty(property));
     }
 
 
     @GetMapping("bigroom")
-    ResponseEntity<?> getBiggestRoom(@RequestBody PropertyDTO property){
+    ResponseEntity<?> getBiggestRoom(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getBiggestRoom(property));
     }
 
 
     @GetMapping("msroomslist")
-    ResponseEntity<?> getSuareRoonsList(@RequestBody PropertyDTO property){
+    ResponseEntity<?> getSuareRoonsList(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getsRoomSquareMeters(property));
     }
 

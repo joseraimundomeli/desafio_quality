@@ -1,6 +1,7 @@
 package com.digitalhouse.Quality.services;
 
 import com.digitalhouse.Quality.dtos.*;
+import com.digitalhouse.Quality.exceptions.DistrictNotFoundException;
 import com.digitalhouse.Quality.models.District;
 import com.digitalhouse.Quality.repositories.DistrictFakeRepostory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class PropertyServiceImpl implements PropertyService{
                 .filter(d -> d.getName().equals(districtName))
                 .findFirst();
         if (!district.isPresent()){
-            System.out.println("Distrito não existe");
+            throw new DistrictNotFoundException(districtName);
         }
         return district.get();
     }
