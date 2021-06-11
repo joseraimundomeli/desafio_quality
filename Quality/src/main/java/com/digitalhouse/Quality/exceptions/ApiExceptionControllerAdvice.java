@@ -6,7 +6,6 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.List;
 @ControllerAdvice
 public class ApiExceptionControllerAdvice {
 
-    @ExceptionHandler
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity methodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletRequest request){
         List<ValidationErroLog> validationErrorList = new ArrayList<>();
         ex.getBindingResult().getFieldErrors().forEach(fieldError -> {

@@ -1,43 +1,37 @@
 package com.digitalhouse.Quality.services;
 
 import com.digitalhouse.Quality.dtos.*;
-import com.digitalhouse.Quality.exceptions.DistrictNotFoundException;
-import com.digitalhouse.Quality.models.District;
-import com.digitalhouse.Quality.repositories.DistrictFakeRepostory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class PropertyServiceImpl implements PropertyService{
 
     @Autowired
-    private DistrictFakeRepostory districtRepostory;
+    private DistrictServiceImpl districtService;
 
     @Override
-    public PropertyResponseDTO getTotalSquareMeters(PropertyDTO propertyDTO) {
+    public PropertyResponseDTO getTotalArea(PropertyDTO propertyDTO) {
         Double squareMeters = propertyDTO.getRoons()
                 .stream()
-                .mapToDouble(x -> this.computerSquareMeters(x.getRoomLength(), x.getRoomWidth()))
+                .mapToDouble(x -> this.computerArea(x.getRoomLength(), x.getRoomWidth()))
                 .sum();
 
-        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total Square Meters is " + squareMeters);
+        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total area: " + squareMeters);
     }
 
     @Override
     public PropertyResponseDTO getPriceProperty(PropertyDTO propertyDTO) {
-        Double totalPrice = propertyDTO.getRoons()
-                .stream()
-                .mapToDouble(x -> this.computerSquareMeters(x.getRoomLength(), x.getRoomWidth()))
-                .sum();
 
-        totalPrice = totalPrice * this.verifyDistrict(propertyDTO.getPropDistrict()).getPriceInfluece();
+        Double totalPrice = this.computerTotalArea(propertyDTO);
 
-        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total price is " + totalPrice);
+        totalPrice = totalPrice * this.districtService.verifyDestrictExist(propertyDTO.getPropDistrict()).getPriceInfluece();
+
+        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total price: $ " + totalPrice);
 
     }
 
@@ -46,40 +40,38 @@ public class PropertyServiceImpl implements PropertyService{
         RoomDTO room = propertyDTO.getRoons()
                 .stream()
                 .max(Comparator.comparing(
-                        x -> computerSquareMeters(x.getRoomLength(), x.getRoomLength()))
+                        x -> computerArea( x.getRoomLength(), x.getRoomWidth()))
                     )
                 .get();
         return room;
     }
 
     @Override
-    public List<RoomSquareDTO> getsRoomSquareMeters(PropertyDTO propertyDTO) {
+    public List<RoomSquareDTO> getRoomsArea(PropertyDTO propertyDTO) {
         List<RoomSquareDTO> roomSquareDTO = propertyDTO.getRoons()
                 .stream()
                 .map(x ->
                         new RoomSquareDTO(
                             x.getRoomName(),
-                            this.computerSquareMeters(x.getRoomLength(), x.getRoomWidth())
+                            this.computerArea(x.getRoomLength(), x.getRoomWidth())
                         )
                 )
                 .collect(Collectors.toList());
         return roomSquareDTO;
     }
 
-    private District verifyDistrict(String districtName){
-        Optional<District> district = districtRepostory.list()
+
+    public Double computerTotalArea(PropertyDTO propertyDTO) {
+        Double totalSize = propertyDTO.getRoons()
                 .stream()
-                .filter(d -> d.getName().equals(districtName))
-                .findFirst();
-        if (!district.isPresent()){
-            throw new DistrictNotFoundException(districtName);
-        }
-        return district.get();
+                .mapToDouble(x -> this.computerArea(x.getRoomLength(), x.getRoomWidth()))
+                .sum();
+
+        return totalSize;
     }
 
 
-
-    private Double computerSquareMeters(Double length, Double width){
+    public Double computerArea(Double length, Double width){
         return length * width;
     }
 }

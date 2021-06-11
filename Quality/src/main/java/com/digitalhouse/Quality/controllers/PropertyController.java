@@ -17,26 +17,26 @@ public class PropertyController {
     @Autowired
     private PropertyServiceImpl propertyService;
 
-    @GetMapping("totalsm")
-    ResponseEntity<?> getTotalSize(@Valid @RequestBody PropertyDTO property){
-        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalSquareMeters(property));
+    @GetMapping("proparea")
+    public ResponseEntity<?> getTotalArea(@Valid @RequestBody PropertyDTO property){
+        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalArea(property));
     }
 
     @GetMapping("price")
-    ResponseEntity<?> getPrice(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getPrice(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getPriceProperty(property));
     }
 
 
     @GetMapping("bigroom")
-    ResponseEntity<?> getBiggestRoom(@Valid @RequestBody PropertyDTO property){
+    public ResponseEntity<?> getBiggestRoom(@Valid @RequestBody PropertyDTO property){
         return ResponseEntity.status(HttpStatus.OK).body(propertyService.getBiggestRoom(property));
     }
 
 
-    @GetMapping("msroomslist")
-    ResponseEntity<?> getSuareRoonsList(@Valid @RequestBody PropertyDTO property){
-        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getsRoomSquareMeters(property));
+    @GetMapping("roomsarealist")
+    public ResponseEntity<?> getRoonsAreaList(@Valid @RequestBody PropertyDTO property){
+        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getRoomsArea(property));
     }
 
     @GetMapping("/**")
