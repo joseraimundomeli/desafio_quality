@@ -16,6 +16,5 @@ class QualityApplicationTests {
 
 	@Test
 	void setUp(){
-//		Assert
 	}
 }

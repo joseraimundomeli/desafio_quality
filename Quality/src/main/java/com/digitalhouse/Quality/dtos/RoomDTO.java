@@ -6,10 +6,12 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.*;
+import java.util.Objects;
 
 @Getter
 @Setter
 @AllArgsConstructor
+
 public class RoomDTO {
     @NotNull(message = "É necessário informar o nome do quarto!")
     @Pattern(regexp = "^([A-Z])(([A-Za-z1-9\\s])*)",message = "O nome do cômodo deve começar com uma letra maiúscula.")
@@ -23,4 +25,17 @@ public class RoomDTO {
     @Max(value = 33, message = "O comprimento máximo permitido por cômodo é de 33 metros.")
     @Min(value = 1, message = "Informe uma medida válida!")
     private Double roomLength;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RoomDTO roomDTO = (RoomDTO) o;
+        return Objects.equals(roomName, roomDTO.roomName) && Objects.equals(roomWidth, roomDTO.roomWidth) && Objects.equals(roomLength, roomDTO.roomLength);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roomName, roomWidth, roomLength);
+    }
 }
