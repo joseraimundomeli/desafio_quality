@@ -17,9 +17,9 @@ public class PropertyController {
     @Autowired
     private PropertyServiceImpl propertyService;
 
-    @GetMapping("totalsm")
-    ResponseEntity<?> getTotalSize(@Valid @RequestBody PropertyDTO property){
-        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalSquareMeters(property));
+    @GetMapping("proparea")
+    ResponseEntity<?> getTotalArea(@Valid @RequestBody PropertyDTO property){
+        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getTotalArea(property));
     }
 
     @GetMapping("price")
@@ -34,9 +34,9 @@ public class PropertyController {
     }
 
 
-    @GetMapping("msroomslist")
-    ResponseEntity<?> getSuareRoonsList(@Valid @RequestBody PropertyDTO property){
-        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getsRoomSquareMeters(property));
+    @GetMapping("roomsarealist")
+    ResponseEntity<?> getRoonsAreaList(@Valid @RequestBody PropertyDTO property){
+        return ResponseEntity.status(HttpStatus.OK).body(propertyService.getRoomsArea(property));
     }
 
     @GetMapping("/**")
