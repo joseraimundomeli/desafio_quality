@@ -2,6 +2,7 @@ package com.digitalhouse.Quality.controllers;
 
 import com.digitalhouse.Quality.dtos.PropertyDTO;
 import com.digitalhouse.Quality.services.PropertyService;
+import com.digitalhouse.Quality.services.PropertyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class PropertyController {
 
     @Autowired
-    private PropertyService propertyService;
+    private PropertyServiceImpl propertyService;
 
     @GetMapping("totalsm")
     ResponseEntity<?> getTotalSize(@RequestBody PropertyDTO property){
