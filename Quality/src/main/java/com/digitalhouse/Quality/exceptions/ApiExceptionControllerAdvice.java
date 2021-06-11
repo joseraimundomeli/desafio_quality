@@ -14,7 +14,7 @@ import java.util.List;
 @ControllerAdvice
 public class ApiExceptionControllerAdvice {
 
-    @ExceptionHandler
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity methodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletRequest request){
         List<ValidationErroLog> validationErrorList = new ArrayList<>();
         ex.getBindingResult().getFieldErrors().forEach(fieldError -> {

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class DistrictFakeRepostory {
-    private static List<District> districtList = Arrays.asList(
+    private static final List<District> districtList = Arrays.asList(
             new District("Bairro A", 1.5),
             new District("Bairro B", 3.5),
             new District("Bairro C", 5.0),

@@ -4,7 +4,6 @@ package com.digitalhouse.Quality.services;
 import com.digitalhouse.Quality.exceptions.DistrictNotFoundException;
 import com.digitalhouse.Quality.models.District;
 import com.digitalhouse.Quality.repositories.DistrictFakeRepostory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,7 +11,7 @@ import java.util.Optional;
 @Service
 public class DistrictServiceImpl implements DistrictService{
 
-    private DistrictFakeRepostory districtRespository = new DistrictFakeRepostory();
+    private final DistrictFakeRepostory districtRespository = new DistrictFakeRepostory();
 
     @Override
     public District verifyDestrictExist(String districtName) {
@@ -20,7 +19,7 @@ public class DistrictServiceImpl implements DistrictService{
                 .stream()
                 .filter(d -> d.getName().equals(districtName))
                 .findFirst();
-        if (!district.isPresent()){
+        if (district.isEmpty()){
             throw new DistrictNotFoundException(districtName);
         }
         return district.get();
