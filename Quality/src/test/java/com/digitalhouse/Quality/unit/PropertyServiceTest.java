@@ -72,12 +72,11 @@ public class PropertyServiceTest {
         //arc
         Double roomAreaTest = this.propertyServiceMock
                 .computerArea(
-                        bigeestRoom.getRoomLength(),
-                        bigeestRoom.getRoomWidth()
+                    bigeestRoom.getRoomLength(),
+                    bigeestRoom.getRoomWidth()
                 );
         // Assert
         assertEquals(roomAreaTest, 75.0, "A área do quarto deve ser 75.0 M2");
-
     }
 
 }

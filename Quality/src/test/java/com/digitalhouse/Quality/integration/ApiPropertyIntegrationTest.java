@@ -78,6 +78,4 @@ public class ApiPropertyIntegrationTest {
                 .andExpect(jsonPath("$.roomWidth").value(10.0))
                 .andExpect(jsonPath("$.roomLength").value(15.0));
     }
-
-
 }

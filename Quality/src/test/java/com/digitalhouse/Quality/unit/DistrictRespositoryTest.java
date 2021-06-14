@@ -23,10 +23,12 @@ public class DistrictRespositoryTest {
     static DistrictServiceImpl districtServiceMock;
 
     private static String districtName;
+    private static String districNameErrorCase;
 
     @BeforeAll
     static void init(){
         districtName = "Bairro A";
+        districNameErrorCase = "Bairro Z";
     }
 
     @Test
@@ -39,7 +41,7 @@ public class DistrictRespositoryTest {
     public void districtExistExceptionCaseTest(){
         assertThrows(
                 DistrictNotFoundException.class, () -> this.districtServiceMock.verifyDestrictExist(
-                        "Teste"),
+                        districNameErrorCase),
                 "Erro DistrictNotFound deve ser gerado!");
 
     }
