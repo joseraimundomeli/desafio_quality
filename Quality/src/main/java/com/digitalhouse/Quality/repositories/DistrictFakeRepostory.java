@@ -10,13 +10,13 @@ import java.util.List;
 @Repository
 public class DistrictFakeRepostory {
     private static final List<District> districtList = Arrays.asList(
-            new District("Bairro A", 1.5),
-            new District("Bairro B", 3.5),
-            new District("Bairro C", 5.0),
-            new District("Bairro D", 3.5),
-            new District("Bairro E", 1.5),
-            new District("Bairro F", 0.5),
-            new District("Bairro G", 1.5)
+            new District("Bairro A", 1000.5),
+            new District("Bairro B", 3050.5),
+            new District("Bairro C", 5020.0),
+            new District("Bairro D", 3400.5),
+            new District("Bairro E", 1000.5),
+            new District("Bairro F", 2000.5),
+            new District("Bairro G", 1050.5)
     );
 
     public List<District> list(){

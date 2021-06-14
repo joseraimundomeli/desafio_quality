@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "3fdd0fe9-0c8d-476b-8997-a89fa02df748",
+		"name": "Quality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "US-0001: Get total square meters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propName\": \"Casa Rosada\",\n  \"propDistrict\" : \"Bairro A\",\n  \"roons\" : [\n    {\n      \"roomName\" : \"Sala\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 15.0\n    },\n    {\n      \"roomName\" : \"Quarto Suite\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 10.0\n    },\n    {\n      \"roomName\" : \"Escritorio\",\n      \"roomWidth\" : 8.0,\n      \"roomLength\" : 8.0\n    },\n    {\n      \"roomName\" : \"Cozinha\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 5.0\n    },\n    {\n      \"roomName\" : \"Area de Servico\",\n      \"roomWidth\" : 12.0,\n      \"roomLength\" : 5.0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proparea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proparea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-0002: Get Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propName\": \"Casa Rosada\",\n  \"propDistrict\" : \"Bairro A\",\n  \"roons\" : [\n    {\n      \"roomName\" : \"Sala\",\n      \"roomWidth\" : 11.0,\n      \"roomLength\" : 15.0\n    },\n    {\n      \"roomName\" : \"Quarto Suite\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 10.0\n    },\n    {\n      \"roomName\" : \"Escritorio\",\n      \"roomWidth\" : 8.0,\n      \"roomLength\" : 8.0\n    },\n    {\n      \"roomName\" : \"Cozinha\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 5.0\n    },\n    {\n      \"roomName\" : \"Area de Servico\",\n      \"roomWidth\" : 12.0,\n      \"roomLength\" : 5.0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-0003: Get biggest room",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propName\": \"Casa Rosada\",\n  \"propDistrict\" : \"Barirro A\",\n  \"roons\" : [\n    {\n      \"roomName\" : \"Sala\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 15.0\n    },\n    {\n      \"roomName\" : \"Quarto Suite\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 10.0\n    },\n    {\n      \"roomName\" : \"Escritorio\",\n      \"roomWidth\" : 8.0,\n      \"roomLength\" : 8.0\n    },\n    {\n      \"roomName\" : \"Cozinha\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 5.0\n    },\n    {\n      \"roomName\" : \"Area de Servico\",\n      \"roomWidth\" : 12.0,\n      \"roomLength\" : 5.0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bigroom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bigroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-0004: Get square meters roons list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propName\": \"Casa Rosada\",\n  \"propDistrict\" : \"Bairro A\",\n  \"roons\" : [\n    {\n      \"roomName\" : \"Sala\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 15.0\n    },\n    {\n      \"roomName\" : \"Quarto Suite\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 10.0\n    },\n    {\n      \"roomName\" : \"Escritorio\",\n      \"roomWidth\" : 8.0,\n      \"roomLength\" : 8.0\n    },\n    {\n      \"roomName\" : \"Cozinha\",\n      \"roomWidth\" : 10.0,\n      \"roomLength\" : 5.0\n    },\n    {\n      \"roomName\" : \"Area de Servico\",\n      \"roomWidth\" : 12.0,\n      \"roomLength\" : 5.0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roomsarealist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roomsarealist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Server Test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"prop_name\": \"Casa rosada\",\n  \"prop_district\" : \"Centro\",\n  \"roons\" : [\n    {\n      \"room_name\" : \"Sala\",\n      \"room_width\" : 10.0,\n      \"room_length\" : 15.0\n    },\n    {\n      \"room_name\" : \"Quarto Suite\",\n      \"room_width\" : 10.0,\n      \"room_length\" : 10.0\n    },\n    {\n      \"room_name\" : \"Escritório\",\n      \"room_width\" : 8.0,\n      \"room_length\" : 8.0\n    },\n    {\n      \"room_name\" : \"Cozinha\",\n      \"room_width\" : 10.0,\n      \"room_length\" : 5.0\n    },\n    {\n      \"room_name\" : \"Área de Serviço\",\n      \"room_width\" : 12.0,\n      \"room_length\" : 5.0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

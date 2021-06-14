@@ -27,11 +27,12 @@ public class PropertyServiceImpl implements PropertyService{
     @Override
     public PropertyResponseDTO getPriceProperty(PropertyDTO propertyDTO) {
 
-        Double totalPrice = this.computerTotalArea(propertyDTO);
+        Double totalArea = this.computerTotalArea(propertyDTO);
+        Double districtInfluence = this.districtService.verifyDestrictExist(propertyDTO.getPropDistrict()).getPriceInfluece();
 
-        totalPrice = totalPrice * this.districtService.verifyDestrictExist(propertyDTO.getPropDistrict()).getPriceInfluece();
+        Double totalPrice = totalArea * districtInfluence;
 
-        return new PropertyResponseDTO(propertyDTO.getPropName(), "Total price: $ " + totalPrice);
+        return new PropertyResponseDTO(propertyDTO.getPropName(), " Total área " + totalArea + " X district influence " + districtInfluence +  " = Total price: $ " + totalPrice);
 
     }
 
