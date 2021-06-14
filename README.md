@@ -1,9 +1,16 @@
 ### Desafio Quality
 
+API utilizando Spring para calcular a área e preço de casas ficticias. Os 
+
+
+## Executando o projeto 
+
+Nesta seção serão apresentadas como utilizar a API, também é possível testar os endpoints utilizando a ferramenta Postman, sendo necessário importar as configurações para o Postman a partir do arquivo **Quality.postman_collection.json** localizado na pasta principal desse repositório.
 
 
 ### Request Body exemplo
 
+Utilize este request body (payload) como padrão para testar os endpoints.
 
 		{
 		  "propName": "Casa Rosada",
