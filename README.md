@@ -1,7 +1,12 @@
-### Desafio Quality
+### Sobre o repositório
 
-API utilizando Spring para calcular a área e preço de casas ficticias. Os 
+#### Documentação
+Também disponível em: https://documenter.getpostman.com/view/5131373/TzeUmTtF
 
+
+#### Desafio Quality
+
+O Desafio quality consiste em avaliar o aprendizado sobre validações, testes unitários e de integração, e rever conceitos aprendidos em aulas anteriores como API e Spring. Para isso, foi proposto o desenvolvimento de uma API Rest para calcular a área e preço de imóveis utilizando dados fictícios. 
 
 ## Executando o projeto 
 
