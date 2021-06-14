@@ -40,12 +40,15 @@
 ### US-001: 
 
 Método http: GET
+
 Endpoint:
 
 	http://localhost:8080/proparea
 
-Request body exemplo: 
+Request body exemplo: [Aqui :house:](https://github.com/joseraimundomeli/desafio_quality/tree/TASK0009-Documentacao#request-body-exemplo)
+
 Resultado esperado: HTTP STATUS: 200
+
 Response body esperado:
 
 	{
@@ -56,12 +59,15 @@ Response body esperado:
 ### US-002: 
 
 Método http: GET
+
 Endpoint:
 
 	http://localhost:8080/price
 
-Request body exemplo: 
+Request body exemplo: [Aqui :house:](https://github.com/joseraimundomeli/desafio_quality/tree/TASK0009-Documentacao#request-body-exemplo)
+
 Resultado esperado: HTTP STATUS: 200
+
 Response body esperado:
 
 	{
@@ -73,12 +79,15 @@ Response body esperado:
 ### US-003: 
 
 Método http: GET
+
 Endpoint:
 
 	http://localhost:8080/bigroom
 
-Request body exemplo: 
+Request body exemplo: [Aqui :house:](https://github.com/joseraimundomeli/desafio_quality/tree/TASK0009-Documentacao#request-body-exemplo)
+
 Resultado esperado: HTTP STATUS: 200
+
 Response body esperado:
 
 	{
@@ -91,12 +100,15 @@ Response body esperado:
 ### US-004: 
 
 Método http: GET
+
 Endpoint:
 
 	http://localhost:8080/roomsarealist
 
-Request body exemplo: 
+Request body exemplo: [Aqui :house:](https://github.com/joseraimundomeli/desafio_quality/tree/TASK0009-Documentacao#request-body-exemplo)
+
 Resultado esperado: HTTP STATUS: 200
+
 Response body esperado:
 
 	[
