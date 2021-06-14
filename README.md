@@ -6,7 +6,15 @@ Também disponível em: https://documenter.getpostman.com/view/5131373/TzeUmTtF
 
 #### Desafio Quality
 
-O Desafio quality consiste em avaliar o aprendizado sobre validações, testes unitários e de integração, e rever conceitos aprendidos em aulas anteriores como API e Spring. Para isso, foi proposto o desenvolvimento de uma API Rest para calcular a área e preço de imóveis utilizando dados fictícios. 
+O Desafio quality consiste em avaliar o aprendizado sobre validações, testes unitários e de integração, e rever conceitos aprendidos em aulas anteriores como API e Spring. Para isso, foi proposto o desenvolvimento de uma API Rest para calcular a área e preço de imóveis utilizando dados fictícios.
+
+
+#### Versionamento
+
+Para versionamento foi utilizado a ferramenta Git e Github, seguindo uma padronização conforme ilustra a figura a baixo. Cada feature foi desenvolvida em uma branch especifica, oriundas de duas branchs principais: **develop** para ambiente de desenvolvimento e **master** para ambiente homologado. 
+
+![code manager img](./img/code_manager.png)
+
 
 ## Executando o projeto 
 

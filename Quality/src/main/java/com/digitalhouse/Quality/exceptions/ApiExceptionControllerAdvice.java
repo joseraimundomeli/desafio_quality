@@ -1,5 +1,6 @@
 package com.digitalhouse.Quality.exceptions;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -34,6 +35,11 @@ public class ApiExceptionControllerAdvice {
 
     @ExceptionHandler(DistrictNotFoundException.class)
     public ResponseEntity districtNotFoundException(DistrictNotFoundException ex, HttpServletRequest request){
-        return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ResourceNotFound.class)
+    public ResponseEntity  resourceNotFound(ResourceNotFound ex, HttpServletRequest request){
+        return new ResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }
